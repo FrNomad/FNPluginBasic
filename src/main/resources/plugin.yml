@@ -1,0 +1,4 @@
+name: PluginBasic
+version: '${project.version}'
+main: org.frnomad.pluginbasic.PluginBasic
+api-version: '1.20'
