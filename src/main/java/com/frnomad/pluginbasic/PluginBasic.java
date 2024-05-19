@@ -16,13 +16,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static com.frnomad.pluginbasic.utils.IncodeUtil.format;
+import static com.frnomad.pluginbasic.utils.InCodeUtil.format;
 
 public abstract class PluginBasic extends JavaPlugin {
 
     public final Logger logger = this.getLogger();
     protected PluginDescriptionFile pdFile = this.getDescription();
-    private List<String> dependencies = new ArrayList<>();
+    private final List<String> dependencies = new ArrayList<>();
 
     protected ListenerTasker listener = new ListenerTasker(this);
     protected CommandTasker command = new CommandTasker(this);

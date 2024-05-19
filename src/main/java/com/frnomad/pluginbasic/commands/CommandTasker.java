@@ -11,13 +11,13 @@ import org.bukkit.command.TabCompleter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.frnomad.pluginbasic.utils.IncodeUtil.replaceArguments;
+import static com.frnomad.pluginbasic.utils.InCodeUtil.replaceArguments;
 
 public class CommandTasker implements CommandExecutor {
 
     private int argPointer;
 
-    private PluginBasic plugin;
+    private final PluginBasic plugin;
 
     private List<Command> commandList = new ArrayList<>();
 
@@ -28,10 +28,10 @@ public class CommandTasker implements CommandExecutor {
 
     public <T extends Command> boolean register(TabCompleter tab, T... commands) {
         for(Command command : commands) {
-            PluginCommand pcmd = plugin.getCommand(command.getPrefix());
-            if(pcmd != null) {
-                pcmd.setExecutor(this);
-                if(tab != null) pcmd.setTabCompleter(tab);
+            PluginCommand plugin_cmd = plugin.getCommand(command.getPrefix());
+            if(plugin_cmd != null) {
+                plugin_cmd.setExecutor(this);
+                if(tab != null) plugin_cmd.setTabCompleter(tab);
                 command.setTasker(this);
                 commandList.add(command);
             }

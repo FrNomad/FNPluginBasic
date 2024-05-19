@@ -3,7 +3,7 @@ package com.frnomad.pluginbasic.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class IncodeUtil {
+public class InCodeUtil {
 
     private static final Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}]");
 
@@ -17,8 +17,8 @@ public class IncodeUtil {
         return net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', msg);
     }
 
-    public static <T> T recoverNull(T value, T recov) {
-        return value == null ? recov : value;
+    public static <T> T recoverNull(T value, T recover) {
+        return value == null ? recover : value;
     }
 
     public static String replaceArguments(String oldString, String... arguments) {
